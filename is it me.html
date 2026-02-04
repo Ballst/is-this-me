@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;title&gt;Party Personality Quiz&lt;/title&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">body {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #f7f7f7;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 22px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">h1 {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.question {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 30px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">button {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #e0e0e0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">#result {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 30px;</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;h1&gt;🎉 Party Personality Quiz&lt;/h1&gt;</p>
+<p class="p1">&lt;p&gt;Answer quickly. Just for fun — but surprisingly accurate.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="quiz"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;button onclick="showResult()"&gt;Reveal My Personality Type&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="result"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">const questions = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"When plans change last minute, you feel:",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"If someone doesn’t reply, you assume:",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"When stressed, you usually:",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"You prefer to decide:",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"What bothers you most:",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"You recharge best by:",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"When someone disagrees with you:",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"In a new group, you:",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"Thinking about the future makes you feel:",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"A free day means you:",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"What stresses you most:"</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">const options = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>["Relief","Annoyed","Neutral","Anxious"],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>["They’re busy","They forgot","They’re ignoring me","Nothing"],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>["Push through","Rest","Talk it out","Withdraw"],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>["Quickly","Carefully","Depends","Avoid deciding"],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>["Being late","Mistakes","Letting others down","Losing control"],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>["Being alone","Being with people","Being productive","Quiet entertainment"],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>["Defend","Listen","Agree","Disengage"],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>["Introduce myself","Wait","Observe","Stick with one person"],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>["Excited","Motivated","Anxious","Neutral"],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>["Be spontaneous","Do tasks","Rest","Create"],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>["Too much work","Unclear rules","Social tension","No control"]</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">let scores = [0,0,0,0];</p>
+<p class="p2"><br></p>
+<p class="p1">const quizDiv = document.getElementById("quiz");</p>
+<p class="p2"><br></p>
+<p class="p1">questions.forEach((q, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let div = document.createElement("div");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>div.className = "question";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>div.innerHTML = `&lt;strong&gt;${i+1}. ${q}&lt;/strong&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>options[i].forEach((opt, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let btn = document.createElement("button");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btn.innerText = opt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btn.onclick = () =&gt; scores[idx]++;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>div.appendChild(btn);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>quizDiv.appendChild(div);</p>
+<p class="p1">});</p>
+<p class="p2"><br></p>
+<p class="p1">function showResult() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const types = [</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"Action-Oriented &amp; Assertive",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"Thoughtful &amp; Structured",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"Empathetic &amp; Relationship-Focused",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"Independent &amp; Reflective"</p>
+<p class="p1"><span class="Apple-converted-space">  </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>let max = scores.indexOf(Math.max(...scores));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("result").style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("result").innerHTML =</p>
+<p class="p1"><span class="Apple-converted-space">    </span>`&lt;h2&gt;Your Likely Style&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;${types[max]}&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">     </span>&lt;p&gt;This reflects how you usually act under everyday pressure and social situations.&lt;/p&gt;`;</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
